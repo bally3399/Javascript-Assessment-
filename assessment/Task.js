@@ -26,13 +26,6 @@ function afternoonClasses(classesTime){
     const time = classesTime.filter(time => time.includes("P", time.length - 2));
     return time;
 }
-// function healthyAndUnHealthyItem(fruit){
-//     let healthyFood = fruit.filter(food => food.isHealthy === true)
-//     for(const item of healthyFood){
-//         console.log(healthyFood.item);
-//     }
-//     return healthyFood;
-// }
 function mapHealthyAndUnHealthyItem(array){
     let healthyFood = array.filter(food => food.isHealthyItem === true);
     for(const name of healthyFood){
