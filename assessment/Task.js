@@ -36,7 +36,6 @@ function afternoonClasses(classesTime){
 function mapHealthyAndUnHealthyItem(array){
     let healthyFood = array.filter(food => food.isHealthyItem === true);
     for(const name of healthyFood){
-        console.log(healthyFood.name);
     }
     return healthyFood;
 }
