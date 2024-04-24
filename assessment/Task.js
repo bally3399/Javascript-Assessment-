@@ -26,4 +26,18 @@ function afternoonClasses(classesTime){
     const time = classesTime.filter(time => time.includes("P", time.length - 2));
     return time;
 }
-module.exports = {increaseScore, squareOfNumber, scoreGreaterThan, shareBooks, expensiveCalculator, afternoonClasses};
+// function healthyAndUnHealthyItem(fruit){
+//     let healthyFood = fruit.filter(food => food.isHealthy === true)
+//     for(const item of healthyFood){
+//         console.log(healthyFood.item);
+//     }
+//     return healthyFood;
+// }
+function mapHealthyAndUnHealthyItem(array){
+    let healthyFood = array.filter(food => food.isHealthyItem === true);
+    for(const name of healthyFood){
+        console.log(healthyFood.name);
+    }
+    return healthyFood;
+}
+module.exports = {increaseScore, squareOfNumber, scoreGreaterThan, shareBooks, expensiveCalculator, afternoonClasses, mapHealthyAndUnHealthyItem};

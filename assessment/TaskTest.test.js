@@ -1,4 +1,4 @@
-let {scoreGreaterThan, increaseScore, squareOfNumber, shareBooks,expensiveCalculator, afternoonClasses} = require('./Task.js')
+let {scoreGreaterThan, increaseScore, squareOfNumber, shareBooks,expensiveCalculator, afternoonClasses, mapHealthyAndUnHealthyItem} = require('./Task.js')
 
 test('Test finding score greater than 70', ()=> {
     let number = [38, 92, 72, 48, 45];
@@ -48,4 +48,23 @@ test("Test get Afternoon classes", ()=>{
     expect(afternoonClasses(classesTime)).toEqual(["1:00 PM","2:30 PM", "3:00 PM", "5:00 PM", "6:00 PM"])
 })
 
+test("Test filter healthyAndUnHealthyItem", ()=>{
+    let shoppingList = [
+        {name: 'Apples', category: 'Fruits', isHealthyItem: true},
+        {name: 'Potato Chips', category: 'Snacks', isHealthyItem: false},
+        {name: 'Carrots', category: 'Vegetable', isHealthyItem: true},
+        {name: 'Chocolate Bar', category: 'Sweets', isHealthyItem: false},
+        {name: 'Greeks Yogurt', category: 'Diary', isHealthyItem: true},
+        {name: 'Soda', category: 'Beverages', isHealthyItem: false}
 
+    ];
+
+    let answer = mapHealthyAndUnHealthyItem(shoppingList)
+
+    let isHealthyItem = [
+        {name: 'Apples', category: 'Fruits', isHealthyItem: true},
+        {name: 'Carrots', category: 'Vegetable', isHealthyItem: true},
+        {name: 'Greeks Yogurt', category: 'Diary', isHealthyItem: true}
+    ];
+    expect(answer).toEqual(isHealthyItem)
+})
