@@ -1,4 +1,4 @@
-let {scoreGreaterThan, increaseScore, squareOfNumber, shareBooks,expensiveCalculator} = require('./Task.js')
+let {scoreGreaterThan, increaseScore, squareOfNumber, shareBooks,expensiveCalculator, afternoonClasses} = require('./Task.js')
 
 test('Test finding score greater than 70', ()=> {
     let number = [38, 92, 72, 48, 45];
@@ -39,27 +39,13 @@ test("Assign books", ()=> {
 
 })
 test('Test expensive calculator', ()=> {
-    const obj1 = {
-        amount: 150
-    }
-    const obj2 = {
-        name: "David",
-        value: "dinner out",
-        amount:100
-    }
-    const obj3={
-        name: "David",
-        value: "Transportation",
-        amount:50
-    }
-    const obj4={
-        name: "David",
-        value: "Entertainment",
-        amount:80
-    }
-    const amount = [obj1.amount + obj2.amount + obj3.amount + obj4.amount];
-     expensiveCalculator(amount);
-    expect(amount).toStrictEqual([380]);
+    let amount = {"groceries": 150, "dining out": 100, "transportation": 50, "entertainment": 80};
+    let answer = expensiveCalculator(amount);
+    expect(answer).toStrictEqual(380);
+})
+test("Test get Afternoon classes", ()=>{
+    const classesTime = ["9:00 AM", "11:00 AM", "1:00 PM","2:30 PM", "3:00 PM", "5:00 PM", "6:00 PM"];
+    expect(afternoonClasses(classesTime)).toEqual(["1:00 PM","2:30 PM", "3:00 PM", "5:00 PM", "6:00 PM"])
 })
 
 

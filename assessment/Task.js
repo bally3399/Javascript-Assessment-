@@ -13,12 +13,17 @@ function shareBooks(listOfMembers){
         value.book += value.name+"'s book"
     }
 }
+
 function expensiveCalculator(amount){
     let add = 0;
     for(const key in amount) {
-        if (amount[key] != null) {
-            add += amount[key].amount;
-        }
+        add += amount[key];
     }
+    return add;
+
 }
-module.exports = {increaseScore, squareOfNumber, scoreGreaterThan, shareBooks, expensiveCalculator};
+function afternoonClasses(classesTime){
+    const time = classesTime.filter(time => time.includes("P", time.length - 2));
+    return time;
+}
+module.exports = {increaseScore, squareOfNumber, scoreGreaterThan, shareBooks, expensiveCalculator, afternoonClasses};
